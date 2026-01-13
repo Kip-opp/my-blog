@@ -94,6 +94,6 @@ image (String)
 
 ## 📸 Screenshot
 
-![App Preview] (https://github.com/Kip-opp/my-blog/blob/main/screenshot.png)
+![App Preview] (https://github.com/Kip-opp/my-blog/raw/main/screenshot.png)
 
 Built by Denis Kipruto | Moringa School Lab Project
