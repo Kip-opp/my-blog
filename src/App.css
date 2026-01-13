@@ -1,0 +1,125 @@
+:root {
+  --bg-color: #000000;
+  --card-bg: #1c1c1e;
+  --card-bg-2: #2c2c2e;
+  --text-primary: #ffffff;
+  --text-secondary: #8e8e93;
+  --accent-blue: #0a84ff;
+  --border: rgba(255, 255, 255, 0.10);
+  --radius: 18px;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Full-width header bar */
+header {
+  width: 100%;
+  padding: 32px 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+header h1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: -webkit-linear-gradient(45deg, #ffffff, #a1c4fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Main layout fills browser width but keeps content readable */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+  }
+}
+
+/* About card */
+.about-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.profile-container {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 3px solid var(--accent-blue);
+  box-shadow: 0 0 18px rgba(10, 132, 255, 0.25);
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 750;
+}
+
+.about-text {
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 8px 0 14px;
+}
+
+/* Subscribe button: always visible */
+.subscribe-btn {
+  display: block;
+  width: 100%;
+  opacity: 1;
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.subscribe-btn:hover {
+  filter: brightness(1.05);
+}
+
+/* Articles list */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
