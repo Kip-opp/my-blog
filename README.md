@@ -1,4 +1,4 @@
-# The Nexus - Personal Tech Blog
+# The NextGen Coder - Personal Tech Blog
 
 A modern, static blog site built with **React**, designed with a "Dark Mode" aesthetic inspired by Apple's design language. This project demonstrates the core concepts of React: **Component Hierarchy** and **Props**.
 
@@ -93,6 +93,6 @@ minutesToRead (Number)
 image (String)
 
 📸 Screenshot
-`![App Screenshot](/screenshot.png)`.
+![App Screenshot](./screenshot.png).
 
 Built by Denis Kipruto | Moringa School Lab Project
