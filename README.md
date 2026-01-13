@@ -2,6 +2,9 @@
 
 A modern, static blog site built with **React**, designed with a "Dark Mode" aesthetic inspired by Apple's design language. This project demonstrates the core concepts of React: **Component Hierarchy** and **Props**.
 
+## 📸 Screenshot
+![App Preview](https://github.com/Kip-opp/my-blog/raw/main/screenshot.png)
+
 ## 🚀 Features
 - **Component-Based Architecture**: Modular design using Header, About, ArticleList, and Article components.
 - **Dynamic Props**: Data is passed down from a central data file (`blog.js`) to child components.
@@ -29,23 +32,24 @@ src/
 ├── App.jsx              # Main parent component
 └── main.jsx             # Entry point
 public/                  # Static assets (images)
+
 ⚙️ Setup & Installation
-Clone the repository
+1. Clone the repository
 
 bash
-git clone https://github.com/YOUR_USERNAME/react-personal-blog.git
-cd react-personal-blog
-Install Dependencies
+git clone https://github.com/Kip-opp/my-blog.git
+cd my-blog
+2. Install Dependencies
 
 bash
 npm install
-Run Development Server
+3. Run Development Server
 
 bash
 npm run dev
 Open the link shown in the terminal (usually http://localhost:5173).
 
-Run Tests
+4. Run Tests
 To verify that components render correctly with the right props:
 
 bash
@@ -91,9 +95,5 @@ preview (String)
 minutesToRead (Number)
 
 image (String)
-
-## 📸 Screenshot
-
-![App Preview] (https://github.com/Kip-opp/my-blog/raw/main/screenshot.png)
 
 Built by Denis Kipruto | Moringa School Lab Project
