@@ -93,6 +93,6 @@ minutesToRead (Number)
 image (String)
 
 📸 Screenshot
-![App Screenshot](./screenshot.png).
+
 
 Built by Denis Kipruto | Moringa School Lab Project
