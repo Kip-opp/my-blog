@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import About from "./components/About";
-import ArticleList from "./components/ArticleList";
 import Footer from "./components/Footer";
-import blogData from "./data/blog";
+import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import BlogPost from "./pages/BlogPost";
 import "./App.css";
 
 function App() {
@@ -19,19 +20,15 @@ function App() {
 
   return (
     <div className={`App ${isDarkMode ? 'dark' : 'light'}`}>
-      <Header 
-        name={blogData.name} 
-        isDarkMode={isDarkMode} 
-        toggleDarkMode={toggleDarkMode} 
+      <Header
+        isDarkMode={isDarkMode}
+        toggleDarkMode={toggleDarkMode}
       />
-      
-      {/* Main content wrapper */}
-      <div className="container">
-        <About image={blogData.image} />
-        <ArticleList posts={blogData.posts} />
-      </div>
-
-      {/* Footer at the bottom */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/posts/:id" element={<BlogPost />} />
+      </Routes>
       <Footer />
     </div>
   );
