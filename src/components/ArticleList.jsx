@@ -8,14 +8,17 @@ function ArticleList({ posts }) {
       title={post.title}
       date={post.date}
       preview={post.preview}
-      // Pass the new data down
       image={post.image}
       minutesToRead={post.minutesToRead}
     />
   ));
 
   return (
-    <main>
+    <main className="articles">
+      <div className="articles-header">
+        <h2 className="section-title">Articles</h2>
+        <p className="section-subtitle">Thoughts on technology, code, and self-improvement</p>
+      </div>
       {articleElements}
     </main>
   );

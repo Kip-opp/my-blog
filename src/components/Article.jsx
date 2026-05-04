@@ -6,18 +6,18 @@ function Article({ title, date = "January 1, 1970", preview, image, minutesToRea
       <article>
         <div className="article-content">
           {image && (
-            <img 
-              src={image} 
-              alt={title} 
+            <img
+              src={image}
+              alt={title}
               className="article-image"
             />
           )}
 
           <div className="article-text">
-            <h3>{title}</h3>
-            <small>
+            <div className="article-meta">
               {date} • {minutesToRead} min read
-            </small>
+            </div>
+            <h3>{title}</h3>
             <p>{preview}</p>
           </div>
         </div>
