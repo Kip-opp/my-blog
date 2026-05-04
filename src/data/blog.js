@@ -1,6 +1,6 @@
 // src/data/blog.js
 const blogData = {
-  name: "The NextGen Coder",
+  name: "tech-chi",
   image: "/rocket.jpg", // Your main profile/sidebar image
   about: "Denis Kipruto is a tech philosopher and software engineer exploring the intersection of AI, self-improvement, and the future of humanity.",
   

@@ -7,7 +7,7 @@ import blogData from "./data/blog";
 import "./App.css";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle('light-mode', !isDarkMode);
