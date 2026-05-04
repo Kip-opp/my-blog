@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-container">
-        <p>© {year} The Nexus .</p>
+        <p>&copy; {year} tech-chi .</p>
         <div className="footer-links">
           <a href="#" className="footer-link">Twitter</a>
           <a href="#" className="footer-link">LinkedIn</a>
