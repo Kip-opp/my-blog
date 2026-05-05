@@ -26,16 +26,18 @@ Responsive layout — sidebar collapses to pill row on mobile, cards stack clean
 
 # Tech Stack
 
-Layer	Tool
-Framework	React 18 (Vite)
-Routing	React Router v6
-Styling	CSS3 — custom properties, Grid, Flexbox
-Testing	Vitest + React Testing Library
-Version Control	Git + GitHub
+| Layer          | Tool |
+|----------------|------|
+| Framework      | React 18 (Vite) |
+| Routing        | React Router v6 |
+| Styling        | CSS3 — custom properties, Grid, Flexbox |
+| Testing        | Vitest + React Testing Library |
+| Version Control| Git + GitHub |
 
 
 # Project Structure
 
+```
 src/
 ├── pages/
 │   ├── Home.jsx          # / — category sidebar + article list
@@ -54,47 +56,57 @@ src/
 ├── App.jsx               # route definitions
 └── main.jsx              # BrowserRouter entry point
 public/                   # static image assets
-            
+```
+
 # Setup & Local Development
+
 1. Clone the repository
 
-bash
+```bash
 git clone https://github.com/Kip-opp/my-blog.git
 cd my-blog
+```
 
 2. Install dependencies
 
-bash
+```bash
 npm install
+```
 
 3. Start the development server
 
-bash
+```bash
 npm run dev
+```
+
 Open http://localhost:5173 in your browser.
 
 4. Run tests
 
-bash
+```bash
 npm test
+```
 
 5. Build for production
 
-bash
+```bash
 npm run build
+```
 
 # Routes
 
-Path	Component	Description
-/	Home.jsx	Article list with category sidebar and search
-/about	AboutPage.jsx	Author bio, skills card, social links
-/posts/:id	BlogPost.jsx	Full post — supports HTML content and external source badge
+| Path      | Component    | Description |
+|-----------|--------------|-------------|
+| /         | Home.jsx     | Article list with category sidebar and search |
+| /about    | AboutPage.jsx| Author bio, skills card, social links |
+| /posts/:id| BlogPost.jsx | Full post — supports HTML content and external source badge |
 Adding Content
-All posts, categories, profile data, skills, and social links live in src/data/blog.js.
+
+All posts, categories, profile data, skills, and social links live in `src/data/blog.js`.
 
 To add a new post, append to the posts array:
 
-js
+```js
 {
   id: 5,
   title: "Your Post Title",
@@ -107,19 +119,24 @@ js
   source: "External Site",           // optional — shows source badge
   sourceUrl: "https://example.com",  // optional
 }
+```
+
 To add a new category, append to the categories array:
 
-js
+```js
 { id: "security", label: "Security", icon: "🔐" }
+```
 Component Overview
-Component	Props	Role
-App	—	Route shell, dark mode state
-Header	isDarkMode, toggleDarkMode	Wordmark, nav, search, toggle
-CategorySidebar	categories, activeCategory, onSelect	Left-rail category filter
-ArticleList	posts, activeCategory	Renders filtered article cards
-Article	id, title, date, preview, image, minutesToRead, categories	Single post card with tags
-ProfileCard	—	Reads from blog.js — avatar, stats, skills, socials
-BlogPost	—	Full post page via useParams
+
+| Component       | Props | Role |
+|----------------|-------|------|
+| App            | — | Route shell, dark mode state |
+| Header         | isDarkMode, toggleDarkMode | Wordmark, nav, search, toggle |
+| CategorySidebar| categories, activeCategory, onSelect | Left-rail category filter |
+| ArticleList    | posts, activeCategory | Renders filtered article cards |
+| Article        | id, title, date, preview, image, minutesToRead, categories | Single post card with tags |
+| ProfileCard    | — | Reads from blog.js — avatar, stats, skills, socials |
+| BlogPost       | — | Full post page via useParams |
 
 # Roadmap
 
