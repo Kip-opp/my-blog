@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Header({ isDarkMode, toggleDarkMode }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/?search=${encodeURIComponent(searchQuery.trim())}`);
+      navigate(`/articles?search=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('');
       setIsSearchOpen(false);
     }
@@ -25,9 +26,9 @@ function Header({ isDarkMode, toggleDarkMode }) {
 
       {/* CENTER — Nav */}
       <nav className="site-nav">
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/" className="nav-link">Articles</Link>
-        <Link to="/about" className="nav-link">About</Link>
+        <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+        <Link to="/articles" className={`nav-link ${location.pathname === '/articles' || (location.pathname === '/' && location.search.includes('search')) ? 'active' : ''}`}>Articles</Link>
+        <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>About</Link>
       </nav>
 
       {/* RIGHT — Search + Toggle */}
