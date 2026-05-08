@@ -1,12 +1,16 @@
-# Tech blog
+# Tech Blog
 
-A modern, component-driven blog built with React + Vite. Features client-side routing, category filtering, dark/light mode, a calligraphy-style wordmark, and a profile sidebar — all driven by a central data file with zero backend dependency.
+A modern, component-driven blog built with React + Vite. Features a captivating hero video with overlay text, a dynamic news section with visual cards, client-side routing, category filtering, dark/light mode, a calligraphy-style wordmark, and a profile sidebar — all driven by a central data file with zero backend dependency.
 
 ## Screenshot
 ![App Preview](https://github.com/Kip-opp/my-blog/raw/main/screenshot.png)
 
 
 # Features
+
+Hero video section — autoplay looping video with overlay text caption on blue-emerald gradient
+
+News section — grid of latest tech & AI news cards with images, categories, and external links
 
 React Router v6 — multi-page navigation with /, /about, /posts/:id routes
 
@@ -40,7 +44,7 @@ Responsive layout — sidebar collapses to pill row on mobile, cards stack clean
 ```
 src/
 ├── pages/
-│   ├── Home.jsx          # / — category sidebar + article list
+│   ├── Home.jsx          # / — hero video, news section, category sidebar + article list
 │   ├── AboutPage.jsx     # /about — bio + profile sidebar
 │   └── BlogPost.jsx      # /posts/:id — full post view
 ├── components/
@@ -55,7 +59,7 @@ src/
 │   └── blog.js           # single source of truth for all content
 ├── App.jsx               # route definitions
 └── main.jsx              # BrowserRouter entry point
-public/                   # static image assets
+public/                   # static assets including video file
 ```
 
 # Setup & Local Development
@@ -97,10 +101,10 @@ npm run build
 
 | Path      | Component    | Description |
 |-----------|--------------|-------------|
-| /         | Home.jsx     | Article list with category sidebar and search |
+| /         | Home.jsx     | Hero video, news section, article list with category sidebar and search |
 | /about    | AboutPage.jsx| Author bio, skills card, social links |
 | /posts/:id| BlogPost.jsx | Full post — supports HTML content and external source badge |
-Adding Content
+
 
 All posts, categories, profile data, skills, and social links live in `src/data/blog.js`.
 
