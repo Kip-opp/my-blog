@@ -15,7 +15,7 @@ export default function BlogPost() {
 
   return (
     <div className="container post-page">
-      <Link to="/" className="back-link">← All Articles</Link>
+      <Link to="/articles" className="back-link">← All Articles</Link>
 
       {post.image && (
         <img src={post.image} alt={post.title} className="post-hero-image" loading="lazy" />
