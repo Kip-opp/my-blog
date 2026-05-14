@@ -1,4 +1,3 @@
-// src/data/blog.js
 const blogData = {
   name: "tech-chi",
   image: "/rocket.jpg", // Your main profile/sidebar image
