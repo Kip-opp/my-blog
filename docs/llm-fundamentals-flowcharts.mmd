@@ -1,0 +1,45 @@
+%% Canonical Mermaid representations of the LLM Fundamentals diagrams.
+%% Update when a live diagram's semantic flow changes.
+
+%% Lesson 1 — Messages and instructions
+flowchart LR
+  System[System] --> Model
+  User[User input] --> Model
+  Model -->|tool request| Host
+  Host --> Tool
+  Tool --> Result[Tool result]
+  Result --> Model
+
+%% Lesson 2 — Tokens
+flowchart LR
+  Text[Input text] --> Tok[Tokenizer]
+  Tok --> Model
+  Model --> Detok[Detokenizer]
+  Detok --> Out[Output text]
+
+%% Lesson 3 — Context window
+flowchart LR
+  Instructions --> Window[Context window]
+  History[Selected history] --> Window
+  Evidence --> Window
+  Window --> Budget[Output budget]
+
+%% Lesson 4 — Tools
+flowchart LR
+  Schemas[Tool schemas] --> Select[Model selection]
+  Task[Task input] --> Select
+  Select --> Validate[Host validation]
+  Validate --> Execute[Tool execution]
+  Execute --> Evidence
+
+%% Lesson 5 — Agents and workflows
+flowchart LR
+  subgraph Workflow
+    WStart[Workflow start] --> WStep[Fixed step] --> WEnd[Workflow end]
+  end
+  subgraph Agent
+    Goal[Agent goal] --> Observe
+    Observe[Observe] --> Act[Choose action]
+    Act -->|loop| Observe
+    Act --> Stop[Stop rule]
+  end
