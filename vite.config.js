@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -8,8 +8,8 @@ export default defineConfig({
     historyApiFallback: true,
   },
   test: {
-    environment: 'jsdom', // <--- This line is the fix
+    environment: "jsdom",
     globals: true,
-    setupFiles: './src/test/setup.js', // We will create this next
+    setupFiles: "./src/test/setup.js",
   },
-})
+});

@@ -1,163 +1,48 @@
-# Tech Blog
+# Signal Library
 
-A modern, component-driven blog built with React + Vite. Features a captivating hero video with overlay text, a dynamic news section with visual cards, client-side routing, category filtering, dark/light mode, a calligraphy-style wordmark, and a profile sidebar — all driven by a central data file with zero backend dependency.
+A calm, editorial reference desk for the mechanics of large language model
+systems. Signal Library presents a five-lesson LLM Fundamentals path with
+original explanations, inspectable system diagrams, and locally tracked
+reading progress — no backend, no analytics on learning behaviour, no
+promotional content.
 
-## Screenshot
-![App Preview](https://github.com/Kip-opp/my-blog/raw/main/screenshot.png)
+## What is here
 
+- A typed lesson model in `src/data/llmFundamentals.ts`.
+- Five lessons: Messages & instructions, Tokens, Context window, Tools,
+  Agents & workflows.
+- An accessible, deterministic SVG diagram engine in
+  `src/components/Flowchart.tsx`.
+- A lesson rail, a progress tracker, and a keyboard-accessible
+  `Cmd/Ctrl + K` search dialog in `src/components/`.
+- Local-only progress stored in the browser via `src/lib/progress.ts`.
+- Legacy redirects from `/about`, `/articles`, `/posts/:id` to `/`.
 
-# Features
+## Routes
 
-Hero video section — autoplay looping video with overlay text caption on blue-emerald gradient
+| Path                              | Purpose                          |
+| --------------------------------- | -------------------------------- |
+| `/`                               | Learning index                   |
+| `/learn/llm-fundamentals`         | Same index at a durable URL      |
+| `/learn/llm-fundamentals/:slug`   | Focused lesson view              |
+| `/about`, `/articles`, `/posts/*` | Redirect to `/`                  |
 
-News section — grid of latest tech & AI news cards with images, categories, and external links
+## Scripts
 
-React Router v6 — multi-page navigation with /, /about, /posts/:id routes
-
-Category sidebar — filter articles by topic instantly (AI, Philosophy, Deep Work, etc.)
-
-Search bar — expandable search in the header, filters posts by title and preview
-
-Dark / Light mode — sun/moon toggle, data-theme attribute on <html>, light default
-
-Medium-style wordmark — italic serif tech-chi header with calligraphy aesthetic
-
-Profile sidebar — avatar, article/category/label stats, social links, skills card, live date
-
-External article support — link to third-party articles with source badge
-
-Responsive layout — sidebar collapses to pill row on mobile, cards stack cleanly
-
-# Tech Stack
-
-| Layer          | Tool |
-|----------------|------|
-| Framework      | React 18 (Vite) |
-| Routing        | React Router v6 |
-| Styling        | CSS3 — custom properties, Grid, Flexbox |
-| Testing        | Vitest + React Testing Library |
-| Version Control| Git + GitHub |
-
-
-# Project Structure
-
-```
-src/
-├── pages/
-│   ├── Home.jsx          # / — hero video, news section, category sidebar + article list
-│   ├── AboutPage.jsx     # /about — bio + profile sidebar
-│   └── BlogPost.jsx      # /posts/:id — full post view
-├── components/
-│   ├── Header.jsx        # wordmark, nav, search, dark mode toggle
-│   ├── CategorySidebar.jsx
-│   ├── ArticleList.jsx
-│   ├── Article.jsx       # card with category tags
-│   ├── ProfileCard.jsx   # stats, skills, socials, date
-│   ├── About.jsx
-│   └── Footer.jsx
-├── data/
-│   └── blog.js           # single source of truth for all content
-├── App.jsx               # route definitions
-└── main.jsx              # BrowserRouter entry point
-public/                   # static assets including video file
-```
-
-# Setup & Local Development
-
-1. Clone the repository
+The brief specifies pnpm; this environment uses npm with the same script
+names. The behaviour is identical.
 
 ```bash
-git clone https://github.com/Kip-opp/my-blog.git
-cd my-blog
+npm test       # vitest
+npm run check  # tsc --noEmit + eslint
+npm run build  # vite build
+npm run dev    # vite dev server
 ```
 
-2. Install dependencies
+## Source boundary
 
-```bash
-npm install
-```
-
-3. Start the development server
-
-```bash
-npm run dev
-```
-
-Open http://localhost:5173 in your browser.
-
-4. Run tests
-
-```bash
-npm test
-```
-
-5. Build for production
-
-```bash
-npm run build
-```
-
-# Routes
-
-| Path      | Component    | Description |
-|-----------|--------------|-------------|
-| /         | Home.jsx     | Hero video, news section, article list with category sidebar and search |
-| /about    | AboutPage.jsx| Author bio, skills card, social links |
-| /posts/:id| BlogPost.jsx | Full post — supports HTML content and external source badge |
-
-
-All posts, categories, profile data, skills, and social links live in `src/data/blog.js`.
-
-To add a new post, append to the posts array:
-
-```js
-{
-  id: 5,
-  title: "Your Post Title",
-  date: "May 4, 2026",
-  preview: "Short description shown on the card.",
-  minutesToRead: 7,
-  image: "/your-image.jpg",          // place image in /public
-  categories: ["ai", "career"],      // must match category ids
-  content: `<p>Full post HTML here...</p>`,
-  source: "External Site",           // optional — shows source badge
-  sourceUrl: "https://example.com",  // optional
-}
-```
-
-To add a new category, append to the categories array:
-
-```js
-{ id: "security", label: "Security", icon: "🔐" }
-```
-Component Overview
-
-| Component       | Props | Role |
-|----------------|-------|------|
-| App            | — | Route shell, dark mode state |
-| Header         | isDarkMode, toggleDarkMode | Wordmark, nav, search, toggle |
-| CategorySidebar| categories, activeCategory, onSelect | Left-rail category filter |
-| ArticleList    | posts, activeCategory | Renders filtered article cards |
-| Article        | id, title, date, preview, image, minutesToRead, categories | Single post card with tags |
-| ProfileCard    | — | Reads from blog.js — avatar, stats, skills, socials |
-| BlogPost       | — | Full post page via useParams |
-
-# Roadmap
-
-Connect to a headless CMS (Contentful / Sanity) or markdown files
-
-Authentication and protected user flows
-
-Comment system per article
-
-RSS feed generation
-
-Pagination or infinite scroll on article list
-
-Deploy to Vercel with proper _redirects for SPA routing
-
-# Contributing
-Pull requests are welcome. Open an issue first for major changes.
-
-Maintained by Kip-opp.
-
+Lessons, glossary entries, and diagrams are original to this repository.
+The only external pointer retained is a neutral topic reference link in
+the footer, included solely as a starting point for further reading.
+No author pages, social panels, profile cards, hero videos, or external
+news sections remain in the product.
